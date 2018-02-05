@@ -28,6 +28,7 @@
 
 https://httpstatuses.com
 
+```
 1×× Informational
 100 Continue
 101 Switching Protocols
@@ -96,3 +97,4 @@ https://httpstatuses.com
 510 Not Extended
 511 Network Authentication Required
 599 Network Connect Timeout Error
+```
