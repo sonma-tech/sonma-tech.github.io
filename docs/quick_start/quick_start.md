@@ -19,7 +19,7 @@
 
 | 参数名称      |     是否必须     | 说明   |
 | ----------- |:---------------:| -----:|
-| Authorization  |      是      |    鉴权字符串，计算方式 :`Base64 <base64>`[base64] (:ref:`HMAC-SHA1 <hmac-sha1>` + 空格 + : + `AccessKey` + : + :ref:`Signature <signature>`) ，详见本文 签名机制 :ref:`sign` 部分 |
+| Authorization  |      是      |    鉴权字符串，计算方式 :`Base64` (:ref:`HMAC-SHA1` + 空格 + : + `AccessKey` + : + :ref:`Signature`) ，详见本文 签名机制 :ref:`sign` 部分 |
 | Content-Type   |      否      |    请求内容的MIME类型,默认为 `application/x-www-form-urlencoded`,上传文件时 `multipart/form-data`。 |
 | Timestamp      |      是      |    请求创建的时间戳(10位)。格林威治时间1970年01月01日00时00分00秒起至现在的总秒数 |
 
@@ -43,7 +43,7 @@
 ### 签名的计算规则
 
 签名计算伪代码
-``
+```
     #鉴权字符串
     Authorization = Base64(HMAC-SHA1 + 空格 + AccessKey+ : + Signature)
     #签名
@@ -52,7 +52,7 @@
     StringToSign  = Timestamp + '\n' + HashedCanonicalQueryString
     #规范请求字符串哈希
     HashedCanonicalQueryString = HexEncode(Hash(CanonicalQueryString)
-``    
+```  
 规范查询字符串的创建(`CanonicalQueryString`)
 
    1. 按字符代码以升序（ASCII 顺序）对参数名称进行排序。例如，以大写字母 F（ASCII 代码 70）开头的参数名称排在以小写字母 b（ASCII 代码 98）开头的参数名称之前。

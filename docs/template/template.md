@@ -25,9 +25,9 @@
 ```
     <layout left="6" top="5" width="20" height="20" style="borderStyle:solid;">
         <text width="" value="动态数据显示" />
-            <% for(i=0;i++;i<_data.arrayObject.lenth) {%>
+            <% for(i=0;i++;i<_data.arrayObject.lenth) &#123;%>
                 <text width="" value="<%=_data.arrayObject[i].value%>" style="fontSize:12"/>
-            <%}%>
+            <%&#125;%>
     </layout>
 ```
 
