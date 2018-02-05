@@ -22,31 +22,34 @@
 
 
 动态代码示例如下，这个例子是将获得的打印数据（data）中的所有对象依次输出。
-
+```
     <layout left="6" top="5" width="20" height="20" style="borderStyle:solid;">
         <text width="" value="动态数据显示" />
             <% for(i=0;i++;i<_data.arrayObject.lenth) {%>
                 <text width="" value="<%=_data.arrayObject[i].value%>" style="fontSize:12"/>
             <%}%>
     </layout>
-
+```
 
 数据：
 
+```
     [
         ["收件人"],
         ["发件人"],
         [ "收货地址"]
     ]
+```
 
 动态代码解析之后的静态代码为：
-
+```
     <layout left="6" top="5" width="20" height="20" style="borderStyle:solid;">
         <text width="" value="动态数据显示" />
         <text width="" value="收件人" style="fontSize:12"/>
         <text width="" value="发件人" style="fontSize:12"/>
         <text width="" value="收货地址" style="fontSize:12"/>
     </layout>
+```
 
 ---
 **重要**
@@ -99,6 +102,7 @@ _开头的变量名都保留给系统使用，请不要在模板中定义_开头
 
 [示例模板](https://api.sonma.net/template/2062)
 
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <% var contentHeight = _data.record_detail.length*5 %>
 
@@ -162,58 +166,6 @@ _开头的变量名都保留给系统使用，请不要在模板中定义_开头
     3.非顾客原因造成质量问题的商品，3个月内可无条件退换。
     4.由于顾客自身原因而造成质量问题或已穿着、洗涤、损坏、修改（如长裤、皮带）的商品及贴身商品恕不退还。
     5.银行卡退款将在30至45个工作日退回原卡。根据银行规定银行卡不可退现金。谢谢惠顾！</text>
-
-
-
     </page>
-
-# 80mm打印机模板说明
-
-## 标签说明
-
-|功能          |  标签格式        |             说明 |
-| ----------- |:---------------:| ----------------:|
-| 加粗        |    ``<B>..</B>`` |
-| 居中        |    ``<C>..</C>`` |
-| 加宽        |    ``<W>..</W>`` |
-| 加高        |    ``<L>..</L>`` |
-| 居中加粗     |    ``<CB>..</CB>`` |
-| 加粗大字     |    ``<DB>..</DB>`` |
-| 居中加粗大字  |    ``<CDB>..</CDB>`` |
-| 换行        |    ``..<BR>`` |
-| 切纸        |    <CUT> |
-
-
-
-
-## 动态模板
-
-模板
-
-    <CB><%=shopName%></CB><BR>
-    <C><%=shopAddress%></C><BR>
-    单号:<%=:orderNumber | left_align:18%> 时间:<%=date%><BR>
-    客户:<%=:customerName | left_align:18 %> 员工:<%=staffName%><BR>
-    ------------------------------------------------<BR>
-    <%=:'货号' | left_align:9 %><%=:'名称' | left_align:9 %><%=:'数量' | left_align:10 %><%=:'单价' | left_align:10 %><%=:'小计' | right_align:10 %><BR>
-    ------------------------------------------------<BR>
-    <% for(var item in order)
-        {%><%=:order[item].ref | left_align:9 %><%=:order[item].name | left_align:9 %><%=:order[item].num | left_align:10 %><%=:order[item].price | left_align:10 %><%=:order[item].total | right_align:10 %><BR><%}
-    %>
-    ------------------------------------------------<BR>
-    数量:                                       2<BR>
-    总计:                                       1000<BR>
-    ------------------------------------------------<BR>
-    <B>微信:500</B><BR><B>未付:500</B><BR>
-    ------------------------------------------------<BR>
-    农行卡：6228 4800 8207 8306 717<BR>
-    工行卡：6222 0236 0202 3368 921<BR>
-    户名：杭州胜马科技有限公司<BR>
-    温馨提示：如发现质量问题，凭此开单票据，本市的三天内，外地七日内调换，若人为损坏，开不退换！<BR>
-    ------------------------------------------------<BR>
-    单据打印时间:                   2016-07-13 13:34<BR>
-    ------------------------------------------------<BR>
-    技术支持(全国):0571-85353593           胜马科技<BR><BR>
-    <C><QRCODE>http://weixin.qq.com/r/Xo7WzpnEacQWrd2t99tM</QRCODE></C><BR><BR>
-    <CUT>
+```
 

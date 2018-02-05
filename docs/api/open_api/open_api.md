@@ -1,7 +1,10 @@
 # 开放接口
 
+
+```
     release:    https://api.sonma.net
     beta:       http://api-beta.sonma.net
+```
 
 ---
 **重要**
@@ -27,18 +30,19 @@
 | exp      |    否         |      过期时间,10位Unix时间戳,最长时间为1年,不传该参数生成的token,30分钟内无请求则被吊销 |
 
 ## 返回示例
-
+```
     {
       "code": 0,
       "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIzNDAwNjkiLCJzY29wZSI6WyIqIl0sImlzcyI6ImFwaS5zb25tYS5uZXQiLCJleHAiOjE0OTc1MTkzNDJ9.PwlIwY9IzqYEM4NTnKofLz9TbmEfHmxbjmrOnOA9ciA"
     }
+```
 or
-
+```
     {
       "code":40030,
       "message":"过期时间不能早于Thu Jun 15 07:37:45 UTC 2017"
     }
-
+```
 
 
 # 吊销token
@@ -57,12 +61,12 @@ or
 ---
 
 ## 返回示例
-
+```
     {
         "code": 0,
         "message": "success"
     }
-
+```
 # 烧写图片
 
 向打印机中写入图片文件
@@ -92,20 +96,20 @@ or
 | scale      |  否      |         缩放比例,默认为1 |
 
 ## 返回示例
-
+```
     {
         "code": 0,
         "message": "logo.BMP"
     }
-
+```
 
 ## 图片测试模板
-
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <page width="100" height="100" >
         <image x="0" y="0" width="100" height="100" src="logo.BMP"/>
     </page>
-
+```
 ---
 
 烧写后打印机中图片别名为 <图片名>.BMP
@@ -126,12 +130,12 @@ or
 | token    |    否        |       鉴权方式自选 |
 
 ## 返回示例
-
+```
     {
         "code": 0,
         "online": true
     }
-
+```
 # 获取打印机状态(详细)
 
 ## 接口地址
@@ -146,7 +150,7 @@ or
 | token     |   否        |       鉴权方式自选 |
 
 ## 返回示例
-
+```
     {
         "sn": 1002123456,
         "name": "测试打印机",
@@ -155,7 +159,7 @@ or
         "status": 0,
         "queue": 0
     }
-
+```
 ## 打印机状态码(status)说明
 
 | status    |     说明 |
@@ -199,19 +203,19 @@ or
 ---
 
 ## 返回示例
-
+```
     {
       "code": 0,
       "message": "success"
     }
-
+```
 or
-
+```
     {
         "code": 202,
         "message": "打印机离线,已加入打印队列"
     }
-
+```
 
 # 清空打印队列
 
@@ -226,12 +230,12 @@ or
 | sn      |     否        |       打印机唯一编号 |
 
 ## 返回示例
-
+```
     {
       "code": 0,
       "message": "success"
     }
-
+```
 # 返回码说明
 
 | 返回码    |   说明           |                                   http status code |

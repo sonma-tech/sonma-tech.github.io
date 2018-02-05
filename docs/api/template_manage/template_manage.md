@@ -13,12 +13,12 @@
 | remark      |       否        |       打印信息，默认打印信息为空 |
 
 ## 返回示例
-  
+```  
     {
         "code": 0,
         "message": "success"
     }
-    
+``` 
 # 获取模板
 
 > GET /template
@@ -30,7 +30,7 @@
 | id           |      是         |      模板编号 |
 
 ## 返回示例
-
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <page width="40" height="70" font-size="14" gap="2">
         <text x="4" y="3.5" font-size="16">品牌:<%=brand_name%></text>
@@ -47,7 +47,7 @@
         <barcode x="0" y="45.5" width="40" height="10" align="center" scale="2"><%=goods_sn%></barcode>
         <text x="4" y="60" font-size="18">零售价:<%=price_1%></text>
     </page>
-    
+```   
 # 创建模板
 
 ## 接口地址
@@ -62,9 +62,10 @@
 | remark      |       否        |       打印信息，默认打印信息为空 |
 
 ## 返回示例
-
+```
     {
         "code": 0,
         "message": "success",
         "id": 2065
     }
+```
